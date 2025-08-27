@@ -10,82 +10,124 @@
 
 </div>
 
-# <div align="center">ChurnGuard-Telco: Predicting Customer Churn in Telecom Industry</div>
+# <div align="center">ChurnGuard-Telco: Telecom Customer Churn Prediction</div>
 
-![ChurnGuard Dashboard](https://github.com/vinit-thummar/ChurnGuard-Telco/blob/main/output/churn_dashboard.png?raw=true)
+![Intro](https://github.com/vinit-thummar/ChurnGuard-Telco/blob/main/output/customer_churn_intro.jpeg?raw=true)
 
-## 🚀 Project Overview
+## What is Customer Churn?
 
-**ChurnGuard-Telco** is a comprehensive machine learning project aimed at predicting customer churn in the telecommunications sector. By analyzing customer data and employing various classification algorithms, this project identifies customers likely to discontinue services, enabling proactive retention strategies.
+Customer churn occurs when customers discontinue their services with a company. In the telecom industry, users frequently switch providers due to competitive offerings. Predicting churn is critical because **retaining existing customers is far cheaper than acquiring new ones**.
 
-## 📊 Dataset
+By identifying high-risk customers in advance, companies can implement targeted retention strategies, improve customer loyalty, and minimize revenue loss.
 
-The project utilizes the [Telco Customer Churn dataset](https://www.kaggle.com/blastchar/telco-customer-churn) from Kaggle, which includes information such as:
+## Objectives:
 
-- Customer demographics (gender, age, partner status, etc.)
-- Account information (contract type, tenure, payment method)
-- Services subscribed (internet service, online security, etc.)
-- Churn status (whether the customer left within the last month)
+- Calculate the percentage of churned customers versus active customers.
+- Analyze key features contributing to customer churn.
+- Build and evaluate machine learning models to predict churn accurately.
 
-## 🛠️ Technologies Used
+## Dataset:
 
-- **Programming Language**: Python
-- **Libraries**: Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn
-- **Data Visualization**: Matplotlib, Seaborn
-- **Machine Learning Models**: Logistic Regression, Decision Trees, Random Forest, Support Vector Machines, K-Nearest Neighbors
+[Telco Customer Churn](https://www.kaggle.com/blastchar/telco-customer-churn)
 
-## 🔍 Key Features
+### Dataset Includes:
 
-- **Exploratory Data Analysis (EDA)**: Visualizations and statistical summaries to understand data patterns.
-- **Data Preprocessing**: Handling missing values, encoding categorical variables, and feature scaling.
-- **Model Training**: Implementation of multiple classification algorithms to predict customer churn.
-- **Model Evaluation**: Assessment using metrics like accuracy, precision, recall, F1-score, and ROC-AUC.
-- **Visualization**: Insightful plots to interpret model performance and feature importance.
+- Churn status – whether a customer left in the last month
+- Services subscribed – phone, internet, online security, backup, tech support, streaming, etc.
+- Account info – tenure, contract type, payment method, monthly & total charges
+- Customer demographics – gender, senior citizen status, dependents, partners
 
-## 📈 Model Performance
+## Implementation:
 
-| Model                   | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
-|-------------------------|----------|-----------|--------|----------|---------|
-| Logistic Regression     | 0.80     | 0.78      | 0.82   | 0.80     | 0.85    |
-| Decision Tree           | 0.78     | 0.76      | 0.79   | 0.77     | 0.83    |
-| Random Forest           | 0.82     | 0.80      | 0.84   | 0.82     | 0.87    |
-| Support Vector Machine  | 0.79     | 0.77      | 0.80   | 0.78     | 0.84    |
-| K-Nearest Neighbors     | 0.76     | 0.74      | 0.77   | 0.75     | 0.81    |
-
-*Note: These metrics are based on the test dataset and may vary with different data splits.*
-
-## 📂 Repository Structure
-
-ChurnGuard-Telco/
-│
-├── data/
-│   └── telco_customer_data.csv    # Raw dataset for customer churn analysis
-│
-├── notebooks/
-│   └── churn_exploration.ipynb    # Jupyter notebook for exploratory data analysis
-│
-├── output/
-│   └── churn_insights.png         # Visualizations and analytical plots
-│
-├── scripts/
-│   └── churn_model.py             # Python script for training ML classification models
-│
-└── README.md                      # Comprehensive project documentation
-
-## 🧑‍💻 About Me
-
-Hi, I'm Vinit Thummar, a data enthusiast passionate about machine learning and data analytics. I specialize in predictive modeling and data visualization, aiming to derive actionable insights from complex datasets. Feel free to connect with me through the links above.
-
-## 🔗 Connect with Me
-
-- [GitHub](https://github.com/vinit-thummar)
-- [LinkedIn](https://www.linkedin.com/in/vinit-thummar/)
-- [Twitter](https://twitter.com/vinit_thummar)
-
-## 📧 Contact
-
-For any inquiries or collaborations, reach out to me at [vinitthummar@example.com](mailto:vinitthummar@example.com).
+**Libraries:** sklearn, pandas, NumPy, Matplotlib, Seaborn
 
 ---
 
-Feel free to modify any section as per your preference. Let me know if you need further assistance with your project or repository!
+## Exploratory Data Analysis (EDA):
+
+### 1. Churn Distribution:
+
+> ![Churn distribution](https://github.com/vinit-thummar/ChurnGuard-Telco/blob/main/output/churn_distribution.png?raw=true)  
+> 26.6% of customers switched providers.
+
+### 2. Churn by Gender:
+
+> ![Churn by gender](https://github.com/vinit-thummar/ChurnGuard-Telco/blob/main/output/churn_gender.png?raw=true)  
+> Both genders exhibit similar churn patterns.
+
+### 3. Customer Contract Distribution:
+
+> ![Contract distribution](https://github.com/vinit-thummar/ChurnGuard-Telco/blob/main/output/contract_distribution.png?raw=true)  
+> Month-to-month customers have the highest churn rate (~75%), compared to 13% for one-year contracts and 3% for two-year contracts.
+
+### 4. Payment Methods:
+
+> ![Payment Methods](https://github.com/vinit-thummar/ChurnGuard-Telco/blob/main/output/payment_methods.png?raw=true)  
+> Customers using electronic checks are more likely to churn.
+
+### 5. Internet Services:
+
+> ![Internet Services](https://github.com/vinit-thummar/ChurnGuard-Telco/blob/main/output/internet_services.png?raw=true)  
+> Fiber optic users have higher churn than DSL users.
+
+### 6. Dependents:
+
+> ![Dependents](https://github.com/vinit-thummar/ChurnGuard-Telco/blob/main/output/dependents.png?raw=true)  
+> Customers without dependents churn more frequently.
+
+### 7. Online Security:
+
+> ![Online Security](https://github.com/vinit-thummar/ChurnGuard-Telco/blob/main/output/online_security.png?raw=true)  
+> Lack of online security increases churn probability.
+
+### 8. Senior Citizen Status:
+
+> ![Senior Citizen](https://github.com/vinit-thummar/ChurnGuard-Telco/blob/main/output/senior_citizen.png?raw=true)  
+> Senior citizens churn more often.
+
+### 9. Paperless Billing:
+
+> ![Paperless Billing](https://github.com/vinit-thummar/ChurnGuard-Telco/blob/main/output/paperless_billing.png?raw=true)  
+> Customers using paperless billing show higher churn.
+
+### 10. Tech Support:
+
+> ![Tech Support](https://github.com/vinit-thummar/ChurnGuard-Telco/blob/main/output/tech_support.png?raw=true)  
+> Lack of tech support correlates with higher churn.
+
+### 11. Monthly Charges, Total Charges, and Tenure:
+
+> ![Charges & Tenure](https://github.com/vinit-thummar/ChurnGuard-Telco/blob/main/output/charges_tenure.png?raw=true)  
+> Higher monthly charges and new customers are more likely to churn.
+
+---
+
+## Machine Learning Models and Evaluation:
+
+![ML Models](https://github.com/vinit-thummar/ChurnGuard-Telco/blob/main/output/model_evaluation.png?raw=true)
+
+### Models Tested:
+
+- Logistic Regression  
+- K-Nearest Neighbors  
+- Naive Bayes  
+- Decision Tree  
+- Random Forest  
+- AdaBoost  
+- Gradient Boosting  
+- Voting Classifier
+
+### Voting Classifier (Final Model):
+
+```python
+from sklearn.ensemble import VotingClassifier, GradientBoostingClassifier, AdaBoostClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+
+clf1 = GradientBoostingClassifier()
+clf2 = LogisticRegression()
+clf3 = AdaBoostClassifier()
+voting_clf = VotingClassifier(estimators=[('gbc', clf1), ('lr', clf2), ('abc', clf3)], voting='soft')
+voting_clf.fit(X_train, y_train)
+predictions = voting_clf.predict(X_test)
+print("Final Accuracy Score:", accuracy_score(y_test, predictions))
